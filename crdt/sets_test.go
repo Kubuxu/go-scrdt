@@ -46,9 +46,10 @@ func TestGSet(t *testing.T) {
 	assert.Equal(set2, set3)
 }
 
+var _ DData = (*TwoPSet)(nil)
 
-func TestGSet(t *testing.T) {
-	assert := assert.New(t)
-	
+func TestTwoPSet(t *testing.T) {
+	//assert := assert.New(t)
+
 
 }
