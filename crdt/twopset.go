@@ -30,7 +30,7 @@ func (set *TwoPSet) Remove(what string) {
 	set.remove.Add(what)
 }
 
-//Returns all elements in set.
+// Returns all elements in set.
 func (set *TwoPSet) Len() int {
 	return set.add.Len() - set.remove.Len()
 }
@@ -46,10 +46,12 @@ func (set *TwoPSet) All() []string {
 	return result
 }
 
+// Returns true if element is contained in the set
 func (set *TwoPSet) Contains(key string) bool {
 	return set.add.Contains(key) && (!set.remove.Contains(key))
 }
 
+// Returns true if element was removed from the set
 func (set *TwoPSet) Removed(key string) bool {
 	return set.remove.Contains(key)
 }
