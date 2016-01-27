@@ -36,7 +36,6 @@ func (gset *GSet) All() []string {
 	for k := range gset.set {
 		keys = append(keys, k)
 	}
-	sort.Strings(keys)
 	return keys
 }
 
@@ -71,5 +70,7 @@ func (gset *GSet) UnmarshalJSON(jsonBlob []byte) error {
 	return nil
 }
 func (gset *GSet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(gset.All())
+	res := gset.All()
+	sort.Strings(res)
+	return json.Marshal(res)
 }
